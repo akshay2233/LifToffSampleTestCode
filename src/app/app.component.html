@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="main-header">
+    <h4>Cricket Trivia</h4>
+  </div>
+  <div class="row" *ngIf="lstDetails && lstDetails.length >0">
+    <div class="col-md-6">
+      <h5 class="card-title">Answer Below questions:</h5>
+
+      <div class="scroll" >
+        <form [formGroup]="crickTestForm" (ngSubmit)="onSubmit()">
+          <ng-container *ngFor="let item of lstDetails;let i = index">
+            <div class="card">
+              <div [ngStyle]="{'background-color': 
+                (isSubmitAnswer) ? 
+                (item.correctAnswer == crickTestForm.controls[item.modelName].value ) ? 'green':'red'
+                : 'gray'} " class="card-header tab-card-header">
+                {{item.questionName}}
+              </div>
+              <div class="tab-content">
+                <div class="form-group">
+                  <select class="form-control" [formControlName]="item.modelName" id="exampleFormControlSelect1">
+                    <option></option>
+                    <ng-container *ngFor="let list of item.listModel">
+                      <option>{{list}}</option>
+                    </ng-container>
+                  </select>
+                  <span class="error"
+                    *ngIf="isSubmitButtonClick && crickTestForm.controls[item.modelName].invalid && crickTestForm.controls[item.modelName].errors.required">
+                    Answer this question</span>
+                </div>
+
+              </div>
+            </div>
+          </ng-container>
+          <div class="button-handler">
+            <button *ngIf="isSubmitAnswer" type="button" class="btn btn-outline-primary" (click)="fnNewTest()">New
+              Test</button>
+            <button *ngIf="!isSubmitAnswer" type="button" class="btn btn-outline-danger"
+              (click)="fnClearForm()">&nbsp;Clear&nbsp;</button>
+            <button *ngIf="!isSubmitAnswer" type="submit" class="btn btn-outline-success">Submit</button>
+
+
+          </div>
+        </form>
+
+
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h5 class="card-title">Result:</h5>
+      <div *ngIf="isSubmitAnswer">
+
+        <table class="table">
+          <thead>
+            <th>Total Answered <span class="badge badge-primary">{{result.total}}</span></th>
+            <th>Wrong Answered <span class="badge badge-danger">{{result.wrong}}</span></th>
+            <th>Correct Answered <span class="badge badge-success">{{result.correct}}</span></th>
+
+          </thead>
+        </table>
+        <div>
+          <div>
+            <div>
+              <div style="display: block">
+                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                  [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                </canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

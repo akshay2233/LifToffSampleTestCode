@@ -1,0 +1,27 @@
+   [
+    {
+      "questionName": "When was last time indial won the cricket world cup",
+      "modelName": "question1",
+      "listModel": [2003, 2012, 2013],
+      "correctAnswer": 2003
+    },
+    {
+      "questionName": "What is the highest individual score by batsban in Test cricket",
+      "modelName": "question2",
+      "listModel": [344, 400, 500],
+      "correctAnswer": 500
+    },
+    {
+      "questionName": "Who as won most number of world cup",
+      "modelName": "question3",
+      "listModel": ["India", "Australia", "England"],
+      "correctAnswer": "India"
+    },
+    {
+      "questionName": "How many international centuries does Sachin Tendulkar under his name",
+      "modelName": "question4",
+      "listModel": [50,60,70],
+      "correctAnswer": 70
+    }
+
+  ]

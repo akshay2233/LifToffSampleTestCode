@@ -1,0 +1,42 @@
+.main-header{
+padding: 20px;
+text-align: center;
+}
+
+.scroll{
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.button-handler{
+  text-align: end;
+
+ 
+}
+button{
+margin: 10px;
+}
+ .form-group{
+//width: 80%;
+padding: 10px;
+
+ }
+
+ .error{
+     color: red;
+ }
+
+ .card-header{
+     color: #fff;
+     background-color:gray;
+     padding: 5px !important;
+     font-size: 15px !important;
+ }
+ .form-group {
+     margin-bottom: 0px;
+ }
+
+ .card{
+    margin-top:10px !important;
+ }
+ 
