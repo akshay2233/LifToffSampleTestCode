@@ -14,7 +14,7 @@
                 (isSubmitAnswer) ? 
                 (item.correctAnswer == crickTestForm.controls[item.modelName].value ) ? 'green':'red'
                 : 'gray'} " class="card-header tab-card-header">
-                {{item.questionName}}
+                {{item.questionName}}?<span class="required">*</span>
               </div>
               <div class="tab-content">
                 <div class="form-group">
